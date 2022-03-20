@@ -22,7 +22,6 @@ for file in os.listdir(directory):
     x=1
     printt = True
     while(cap.isOpened()):
-        print("here")
         frameId = cap.get(1) #current frame number
         ret, frame = cap.read()
         if (ret != True):
@@ -44,10 +43,15 @@ for file in os.listdir(directory):
                     # If confidence > 0.5, save it as a separate file
                     if (confidence > 0.5):
                         frame2 = frame[startY-padding_y:endY+padding_y, startX-padding_x:endX+padding_x]
-                        if frame.any():
-                            print("x is "+str(x))
+                        frame3 = frame[startY+100:endY-230, startX+10:endX-10]
+                        frame4 = frame[startY+300:endY-20, startX+50:endX-50]
+                        if frame2.any():
                             x+=1
                             cv2.imwrite(base_dir + 'results/' + str(x) + '_'+ filename + '.png', cv2.resize(frame2, (224, 224)))
+                            # TODO: resize both frame2 and frame3 to a good size for a dataset
+                            
+                            cv2.imwrite(base_dir + 'eyes/' + str(x) + '_'+ filename + '.png', frame3)
+                            cv2.imwrite(base_dir + 'mouth/' + str(x) + '_'+ filename + '.png', frame4)
 
 
                 printt = False
