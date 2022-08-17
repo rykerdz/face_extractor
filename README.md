@@ -1,7 +1,8 @@
 # Face extractor
 An AI tool that detects and extracts visible and partially visible faces from images.
-- Extracts and saves detected faces to the **faces** folder
-- draws a box around all detected faces and saves a copy of the original image in the **results** folder
+- Extracts and saves detected faces to the **faces** folder.
+- draws a box around all detected faces and saves a copy of the original image in the **results** folder.
+- can use on multiple images at one run.
 
 #### Input image
 ![This is an image](images/afp_en_bf6fbd3b999e6b92e38c002a22721b9ae78a5495.jpg)
