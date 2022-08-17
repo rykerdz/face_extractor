@@ -22,6 +22,8 @@ pip install -r requirements.txt
 1. Move your images to the **images** folder.
 2. run ```python face_extractor.py```
 
+*After running the script you should find your results in the **results** and **faces** folders*
+
 ## Used Libaries
 - OpenCV
 - numpy
